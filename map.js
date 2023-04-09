@@ -20,7 +20,13 @@ for(let i=0;i<7;i++){
 
 function traverse(){
     arr.forEach(function(item,index){
-        console.log(item);
+        let trav = item.head.next;
+        let ret = index+ '|';
+        while(trav){
+            ret += trav.val+'->';
+            trav=trav.next;
+        }
+        console.log(ret);
     })
 }
 
@@ -42,8 +48,11 @@ function insertion(value){
     return;
 }
 
-
-
+insertion(10);
+insertion(13);
+insertion(7);
+insertion(14);
+traverse();
 
 // let node1 = new Node(2);
 // let node2 = new Node(3);
